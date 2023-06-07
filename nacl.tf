@@ -62,6 +62,24 @@ resource "aws_default_network_acl" "shopping-internalnode-nacl" {
     to_port    = 65535
   }
 
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
   tags = {
     Name = "shopping-internalnode-nacl"
   }
@@ -144,6 +162,24 @@ resource "aws_network_acl" "shopping-firewall-nacl" {
     from_port  = 1024
     to_port    = 65535
   }
+
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
   
   tags = {
     Name = "shopping-firewall-nacl"
@@ -208,6 +244,25 @@ resource "aws_network_acl" "shopping-masternode-nacl" {
     cidr_block = "0.0.0.0/0"
     from_port  = 1024
     to_port    = 65535
+  }
+
+
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
   }
 
 
@@ -280,6 +335,24 @@ resource "aws_network_acl" "shopping-workernode-nacl" {
     to_port    = 65535
   }
 
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  
   tags = {
     Name = "shopping-workernode-nacl"
   }
@@ -347,6 +420,26 @@ resource "aws_default_network_acl" "shopping-db1-nacl" {
     from_port  = 3306
     to_port    = 3306
   }
+
+
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
   tags = {
     Name = "shopping-db1-nacl"
   }
@@ -374,6 +467,25 @@ resource "aws_network_acl" "shopping-db2-nacl" {
     from_port  = 3306
     to_port    = 3306
   }
+
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
 
   tags = {
     Name = "shopping-db2-nacl"
@@ -443,6 +555,25 @@ resource "aws_default_network_acl" "bastion-nacl" {
     to_port    = 3306
   }
 
+
+  ingress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+  egress {
+    rule_no    = 900
+    protocol   = -1
+    action     = "allow"
+    cidr_block = "0.0.0.0/0"
+    from_port  = 0
+    to_port    = 0
+  }
+
+  
   tags = {
     Name = "bastion-nacl"
   }
